@@ -23,7 +23,7 @@ export default {
 <style lang="scss" >
     .main-layout {
         position: relative;
-        height: 100vh;
+        max-height: 550px;
        &__nav {
          background-color: rgba(#000, 1);
            min-height: 70px;
@@ -31,12 +31,8 @@ export default {
             position: fixed;
             top:0;
             z-index: 5;
-
-            
-
        }
        &__content{
-          // background-color: pink;
            display: flex;
            flex:1;
            min-height: 100vh;
