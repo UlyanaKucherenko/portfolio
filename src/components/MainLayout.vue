@@ -23,19 +23,19 @@ export default {
 <style lang="scss" >
     .main-layout {
         position: relative;
-        min-height: 100vh;
+        height: calc(100vh-60px);
        &__nav {
          background-color: rgba(#000, 1);
            min-height: 70px;
             width: 100%;
             position: fixed;
-            top:0;
+            top:10px;
             z-index: 5;
        }
        &__content{
            display: flex;
            flex:1;
-           min-height: 100vh;
+           height: 100vh;
            width: 100%;
          
        }
