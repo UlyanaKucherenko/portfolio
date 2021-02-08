@@ -39,15 +39,10 @@ export default {
 
 .top-nav {
      width: 100%;
-      position: fixed;
-      top:0;
-      z-index: 5;
       @include flex(center, center, column);
-    
-
     &__btns {
       width: 100%;
-      min-height: 70px;
+      min-height: 80px;
       align-items: center;
       @include flex(space-between, center, row);
       ///

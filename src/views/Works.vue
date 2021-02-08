@@ -47,7 +47,7 @@ export default {
 </script>
 <style lang="scss">
     .works {
-        padding-top: 70px;
+        padding-top: 80px;
         width: 100%;
         
         &__container {

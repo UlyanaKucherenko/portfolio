@@ -24,20 +24,20 @@ export default {
     .main-layout {
         position: relative;
         height: calc(100vh-60px);
-       &__nav {
-         background-color: rgba(#000, 1);
-           min-height: 70px;
+        &__nav {
+            background-color: rgba(#000, 1);
+            min-height: 70px;
             width: 100%;
             position: fixed;
-            top:10px;
+            top:0px;
             z-index: 5;
-       }
-       &__content{
-           display: flex;
-           flex:1;
-           height: 100vh;
-           width: 100%;
-         
-       }
+        }
+        &__content{
+            display: flex;
+            flex:1;
+            height: 100vh;
+            width: 100%;
+            
+        }
     }
 </style>
