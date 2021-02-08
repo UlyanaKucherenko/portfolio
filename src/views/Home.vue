@@ -57,12 +57,16 @@ export default {
 <style lang="scss">
   .home {
     background-color: #000;
-    min-height: 550px;
+    min-height: 100vh;
     width: 100%;
     color: #fff;
     @include flex(center, center, column);
     position: relative;
     z-index: 1;
+
+    @media screen and (max-width: 400px) {
+      min-height: 500px;
+    }
     
     &:before {
       content: "";
@@ -81,18 +85,22 @@ export default {
       min-height: 100vh;
       position: relative;
       @include flex(center, center, column);
+      text-align: center;
+       @media screen and (max-width: 400px) {
+        min-height: 500px;
+      }
     }
 
     &__name {
       margin-bottom: 20px;
       text-transform: uppercase;
-      color: white;
+       @include text(25px, 600, #fff);
     }
 
     &__position {
        margin-bottom: 10px;
        text-transform: uppercase;
-       color: white;
+        @include text(20px, 600, #fff);
     }
 
     &__list-icons{
@@ -102,7 +110,7 @@ export default {
       margin-bottom: 50px;
     }
     &__item-list-icons{
-      font-size: 20px;
+      font-size: 30px;
       margin-right: 5px;
       &:last-child {
         margin-right: 0;

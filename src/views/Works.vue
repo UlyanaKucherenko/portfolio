@@ -16,7 +16,7 @@
             </li>
             <li class="works__item-list">
                 <div class="works__image-wrap">
-                   <img src="https://picsum.photos/id/236/200/300" />
+                   <img src="https://picsum.photos/id/236/250/300" />
                 </div>
                  <div class="works__info">
                     <p class="works__title">CoffeeLike App | Vue Js | VueX</p>
@@ -27,7 +27,7 @@
             </li>
             <li class="works__item-list">
                 <div class="works__image-wrap">
-                   <img src="https://picsum.photos/id/236/200/300" />
+                   <img src="https://picsum.photos/id/236/250/300" />
                 </div>
                  <div class="works__info">
                     <p class="works__title">CoffeeLike App | Vue Js | VueX</p>
@@ -68,7 +68,7 @@ export default {
             border:1px dotted grey;
              width: 90%;
              max-width: 400px;
-             padding: 10px 0;
+             padding: 10px 15px;
               
              @media screen and (min-width: 768px) {
                  width: 48%;
@@ -81,7 +81,8 @@ export default {
             margin-bottom: 20px;
             border-radius:30px 0px 30px 0px ;
             border:1px solid grey;
-            width: 250px;
+            max-width: 250px;
+            width: 100%;
             @include padding-hack($padding: 70%, $size: cover);
             img{
                  border-radius:30px 0px 30px 0px ;
