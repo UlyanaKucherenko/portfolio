@@ -1,7 +1,7 @@
 <template>
     <div class="main-layout">
         <div class="main-layout__container">
-            <div class="main-layout__nav">
+            <div class="main-layout__nav" :class="{ scrolling: scrollPosition > 0}" >
               <top-nav />
             </div>
             <div class="main-layout__content">
@@ -17,16 +17,40 @@ export default {
     name: 'MainLayout',
     components: {
         TopNav
+    },
+    data() {
+         return {
+             scrollPosition: 0,
+         }
+       
+    },
+     mounted() {
+        window.addEventListener("scroll", this.handleTopBar);
+    },
+    methods:{
+        handleTopBar() {
+            this.scrollPosition = window.scrollY;
+        },
     }
 }
 </script>
 <style lang="scss" >
     .main-layout {
         position: relative;
-        height: calc(100vh-60px);
+        min-height: 100vh;
+
+         .scrolling {
+            background-color: rgba(#000, 0.5);
+            z-index: 2;
+            padding: 20px 0;
+            transition: 0.3s ease-in;
+            top: 0;
+            
+        }
+
         &__nav {
             background-color: rgba(#000, 1);
-            min-height: 70px;
+            min-height: 50px;
             width: 100%;
             position: fixed;
             top:0px;
