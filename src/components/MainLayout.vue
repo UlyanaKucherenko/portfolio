@@ -37,6 +37,7 @@ export default {
            flex:1;
            min-height: 100vh;
            width: 100%;
+         
        }
     }
 </style>

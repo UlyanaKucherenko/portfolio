@@ -57,16 +57,12 @@ export default {
 <style lang="scss">
   .home {
     background-color: #000;
-    min-height: 100vh;
     width: 100%;
     color: #fff;
     @include flex(center, center, column);
     position: relative;
     z-index: 1;
 
-    @media screen and (max-width: 400px) {
-      min-height: 500px;
-    }
     
     &:before {
       content: "";
@@ -82,13 +78,9 @@ export default {
     }
 
     &__container {
-      min-height: 100vh;
       position: relative;
       @include flex(center, center, column);
       text-align: center;
-       @media screen and (max-width: 400px) {
-        min-height: 500px;
-      }
     }
 
     &__name {
