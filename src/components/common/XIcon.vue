@@ -21,6 +21,11 @@ export default {
         [getName('react')]: () => import('../icons/IconReact.vue'),
         [getName('fvue')]: () => import('../icons/IconFvue.vue'), 
         [getName('plaine')]: () => import('../icons/IconPlaine.vue'),
+        [getName('plaine')]: () => import('../icons/IconPlaine.vue'),
+        [getName('linkedin')]: () => import('../icons/IconLinkedin.vue'),
+        [getName('github')]: () => import('../icons/IconGithub.vue'),
+        [getName('gmail')]: () => import('../icons/IconGmail.vue'),
+        [getName('tel')]: () => import('../icons/IconTel.vue'),
 
     },
     computed: {

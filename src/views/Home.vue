@@ -27,7 +27,7 @@
           </router-link>
         </li>
         <li class="home__item-list">
-          <a href="#" target="_blank" class="home__item-link">
+          <a href="https://www.linkedin.com/in/uliana-kucherenko" target="_blank" class="home__item-link">
             Let ` s connect
           </a>
         </li>
@@ -87,13 +87,15 @@ export default {
     &__name {
       margin-bottom: 20px;
       text-transform: uppercase;
-       @include text(28px, 600, #fff);
+      @include text(28px, 600, #fff);
+      font-style: italic;
     }
 
     &__position {
-       margin-bottom: 10px;
-       text-transform: uppercase;
-        @include text(25px, 600, #fff);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      @include text(25px, 600, #fff);
+      font-style: italic;
     }
 
     &__list-icons{

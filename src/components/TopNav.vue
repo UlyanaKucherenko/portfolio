@@ -2,7 +2,7 @@
      <nav class="top-nav">
         <div class="top-nav__btns container">
           <div class="top-nav__wrap-logo"  @click="closeMenu()">
-            <router-link class="top-nav__logo" to="/" exact>
+            <router-link class="top-nav__logo" to="/" exact active-class="_active">
               Portfolio
             </router-link>
           </div>
@@ -14,13 +14,13 @@
         <the-animation>
             <ul class="top-nav__menu" :class="{menuActive}" v-if="menuActive">
                 <li class="top-nav__item-menu" @click="closeMenu()">
-                <router-link to="/works" exact active-class="_active">
+                <router-link to="/works" exact active-class="_active"  class="top-nav__link">
                     <span>Works</span>
                 </router-link>
                 </li>
                 <li class="top-nav__item-menu">About</li>
                 <li class="top-nav__item-menu" @click="closeMenu()">
-                  <router-link to="/contact" exact active-class="_active">
+                  <router-link to="/contact" exact active-class="_active" class="top-nav__link">
                     <span>Contact</span>
                 </router-link></li>
             </ul>
@@ -55,29 +55,29 @@ export default {
 </script>
 <style lang="scss">
 
-
 .top-nav {
 
-
-  .hiddenIcon {
-    display: none;
-  }
-     width: 100%;
+    width: 100%;
     @include flex(center, center, column);
+    
     &__btns {
       width: 100%;
       min-height: 70px;
       align-items: center;
       @include flex(space-between, center, row);
-     
     }
 
     &__logo {
-       @include text(18px, 500, #ffc39e);
+       @include text(18px, 500, darkmagenta);
        text-transform: uppercase;
-       &:active {
-         color:#ffc39e;
-       }
+       font-style: italic;
+      &:hover{
+        color:rgb(185, 56, 185);
+        transition: all 0.3s ease-out;
+      }
+      &._active {
+        color: darkmagenta;
+      }
     }
 
     &__menu {
@@ -86,7 +86,6 @@ export default {
        padding-top: 50px;
        border-top: 1px solid grey;
        display: none;
-
     }
 
     &__burger-btn {
@@ -99,8 +98,16 @@ export default {
       }
     }
     &__icon-menu {
-      color: rgb(10, 151, 10);
-      font-size: 30px
+      color: darkmagenta;
+      font-size: 30px;
+      &:hover{
+        color:rgb(185, 56, 185);
+        transition: all 0.3s ease-out;
+      }
+    }
+
+    .hiddenIcon {
+      display: none;
     }
 
     .menuActive {
@@ -116,7 +123,17 @@ export default {
       &:last-child{
         margin-bottom: 0;
       }
-
+    }
+    &__link {
+       @include text(35px, 500, #fff);
+       &:hover,
+       &:active {
+        color: darkmagenta;
+        transition: all 0.3s ease-out;
+      }
+      &._active {
+        color: darkmagenta;
+      }
     }
 }
 </style>
