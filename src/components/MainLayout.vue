@@ -40,7 +40,7 @@ export default {
         min-height: 100vh;
 
          .scrolling {
-            background-color: rgba(#000, 0.8);
+            background-color: rgba(#0a0f12, 0.8);
             z-index: 2;
             padding: 20px 0 0 0;
             transition: 0.3s ease-in;
@@ -49,7 +49,7 @@ export default {
         }
 
         &__nav {
-            background-color: rgba(#000, 1);
+            background-color: rgba(#0a0f12, 1);
             width: 100%;
             position: fixed;
             top:0px;

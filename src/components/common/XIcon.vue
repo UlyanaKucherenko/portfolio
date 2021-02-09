@@ -19,7 +19,8 @@ export default {
         [getName('jsl')]: () => import('../icons/IconJsl.vue'),
         [getName('scss')]: () => import('../icons/IconScss.vue'),
         [getName('react')]: () => import('../icons/IconReact.vue'),
-        [getName('fvue')]: () => import('../icons/IconFvue.vue'),
+        [getName('fvue')]: () => import('../icons/IconFvue.vue'), 
+        [getName('plaine')]: () => import('../icons/IconPlaine.vue'),
 
     },
     computed: {

@@ -27,7 +27,7 @@
           </router-link>
         </li>
         <li class="home__item-list">
-          <a href="https://www.linkedin.com/in/uliana-kucherenko/" target="_blank" class="home__item-link">
+          <a href="#" target="_blank" class="home__item-link">
             Let ` s connect
           </a>
         </li>
@@ -56,7 +56,7 @@ export default {
 </script>
 <style lang="scss">
   .home {
-    background-color: #000;
+    background-color: #0a0f12;
     width: 100%;
     height: 100%;
     color: #fff;
@@ -87,13 +87,13 @@ export default {
     &__name {
       margin-bottom: 20px;
       text-transform: uppercase;
-       @include text(25px, 600, #fff);
+       @include text(28px, 600, #fff);
     }
 
     &__position {
        margin-bottom: 10px;
        text-transform: uppercase;
-        @include text(20px, 600, #fff);
+        @include text(25px, 600, #fff);
     }
 
     &__list-icons{
@@ -105,6 +105,7 @@ export default {
     &__item-list-icons{
       font-size: 30px;
       margin-right: 5px;
+      color: #fff;
       &:last-child {
         margin-right: 0;
       }
@@ -123,10 +124,10 @@ export default {
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      background-color: rgb(30, 110, 6);
+      background-color: green;
       margin-bottom: 20px;
       text-transform: uppercase;
-      border: 3px dotted #fff;
+      border: 4px dotted #fff;
       border-radius: 10px;
       &:last-child {
         margin-bottom: 0;
