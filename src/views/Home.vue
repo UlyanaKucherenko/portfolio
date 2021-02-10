@@ -121,12 +121,9 @@ export default {
 
     &__item-list {
       min-height: 40px;
-      padding: 0 10px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+      width: 200px;
       background-color: green;
+      @include flex(center, center, row);
       margin-bottom: 20px;
       text-transform: uppercase;
       border: 4px dotted #fff;
@@ -134,10 +131,20 @@ export default {
       &:last-child {
         margin-bottom: 0;
       }
+      &:hover {
+            background-color: rgb(6, 138, 6);
+        }
     }
 
     &__item-link {
-      @include text(16px, 400, #fff);
+      @include text(16px, 500, #fff);
+      height: 100%;
+      width:100%;
+      padding: 0 10px;
+      &:hover,
+      &:active {
+           @include text(16px, 500, #fff);
+        }
     }
 
  .fade-in-enter-active {

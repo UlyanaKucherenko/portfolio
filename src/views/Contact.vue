@@ -1,9 +1,6 @@
 <template>
     <div class="contact">
          <div class="contact__container container">
-             <!-- <the-animation name="swing">
-                <x-icon icon=plaine />
-              </the-animation> -->
                <div class="contact__image-wrap">
                     <img src="../assets/plane2.gif" alt="plain"  class="contact__image">
                </div>
@@ -41,11 +38,10 @@ export default {
 </script>
 <style lang="scss" >
     .contact {
-        padding-top: 80px;
+        padding-top: 70px;
         width: 100%;
         
         &__container {
-            padding-top: 20px;
             @include flex(center,center,column);
         }
 

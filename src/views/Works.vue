@@ -4,43 +4,33 @@
             <ul class="works__list">
                 <li class="works__item-list" >
                     <a class="works__item-link" href="https://github.com/UlyanaKucherenko" target="_blank">
-                        <h2 class="works__title">GitHub </h2>
+                        <h2 class="works__title-first">GitHub </h2>
                         <div class="contact__image-wrap">
                             <img src="../assets/source.gif" alt="plain" style="width:200px; height:180px">
                         </div>
                     </a>
                 </li>
-            <li class="works__item-list">
+            <li class="works__item-list" v-for="item in projects" :key="item.title">
                 <div class="works__image-wrap">
                     <img src="https://picsum.photos/seed/picsum/250/300" />
                 </div>
                 <div class="works__info">
-                    <p class="works__title">CoffeeLike App | Vue Js </p>
-                    <a href="#" target="_blank" class="works__preview">live preview</a>
-                    <a href="#" target="_blank" class="works__github">GitHub</a>
-                    <p class="works__read-more">read more...</p>
+                    <p class="works__title">{{item.title}}</p>
+                    <div class="works__btns-link">
+                        <a href="#" target="_blank" class="works__preview">preview</a>
+                        <a href="#" target="_blank" class="works__github">GitHub</a>
+                    </div>
+                    <p class="works__read-more" @click="showModal" >read more...</p>
                 </div>
-            </li>
-            <li class="works__item-list">
-                <div class="works__image-wrap">
-                   <img src="https://picsum.photos/id/236/250/300" />
-                </div>
-                 <div class="works__info">
-                    <p class="works__title">CoffeeLike App | Vue Js | VueX</p>
-                    <a href="#" target="_blank" class="works__preview">live preview</a>
-                    <a href="#" target="_blank" class="works__github">GitHub</a>
-                    <p class="works__read-more">read more...</p>
-                </div>
-            </li>
-            <li class="works__item-list">
-                <div class="works__image-wrap">
-                   <img src="https://picsum.photos/id/236/250/300" />
-                </div>
-                 <div class="works__info">
-                    <p class="works__title">CoffeeLike App | Vue Js | VueX</p>
-                    <a href="#" target="_blank" class="works__preview">live preview</a>
-                    <a href="#" target="_blank" class="works__github">GitHub</a>
-                    <p class="works__read-more">read more...</p>
+                <div>
+                    <a-modal
+                    :title="item.title"
+                    :visible="visible"
+                    @cancel="handleCancel"
+                    :footer="null"
+                    >
+                    <p>{{ ModalText }}</p>
+                    </a-modal>
                 </div>
             </li>
         </ul>
@@ -49,16 +39,55 @@
 </template>
 <script>
 export default {
-    name: "Works"
+    name: "Works",
+    data(){
+        return{
+            projects: [
+                {
+                    image: "",
+                    title: "CoffeeLike App | Vue Js ",
+                    github: "",
+                    preview:"",
+
+                },
+                 {
+                    image: "",
+                    title: "Manag | Vue Js",
+                    github: "",
+                    preview:"",
+
+                },
+                 {
+                    image: "",
+                    title: "Portfolio | Vue Js",
+                    github: "",
+                    preview:"",
+
+                }
+            ],
+
+            ModalText: 'Content of the modal',
+            visible: false,
+            confirmLoading: false,
+        }
+    },
+    methods: {
+         showModal() {
+            this.visible = true;
+            },
+        handleCancel() {
+            console.log('Clicked cancel button');
+            this.visible = false;
+        },
+    }
 }
 </script>
 <style lang="scss">
     .works {
-        padding-top: 80px;
+        padding-top: 70px;
         width: 100%;
         
         &__container {
-            padding-top: 20px;
             @include flex(center,center,column);
         }
         &__list{
@@ -73,14 +102,15 @@ export default {
             @include flex(center,center,column);
             text-align: center;
             border:2px dotted grey;
-             width: 90%;
-             max-width: 400px;
-            min-height: 300px;
+            width: 90%;
+            max-width: 250px;
+            min-height: 320px;
              padding: 10px 15px;
              &:first-child{
                 border-radius:30px 0px 30px 0px ;
                 padding: 0;
                 position: relative;
+                border:1px solid grey;
              }
               
              @media screen and (min-width: 768px) {
@@ -119,15 +149,33 @@ export default {
         &__info{
             @include flex(center,center,column);
         }
+
+        &__title-first {
+             @include text(35px, 500, #000);
+        }
+
         &__title {
             @include text(20px, 500, #000);
+            min-height: 60px;
         }
+
+        &__btns-link {
+            @include flex(center,center,row);
+        }
+
         &__preview,
         &__github {
             display: block;
+            border-radius:30px 0px 30px 0px ;
+            transition: .3s;
+            &:hover {
+                box-shadow: none;
+                color: #ffffff;
+                }
         }
         &__preview {
             background-color: green;
+            box-shadow: 0 4px 0 rgba(green, 0.5);
             min-height: 45px;
             max-width: 200px;
             @include flex(center,center,column);
@@ -136,10 +184,12 @@ export default {
             cursor: pointer;
             margin-bottom: 10px;
             text-transform: uppercase;
+            margin-right: 20px;
         }
 
          &__github {
             background-color: #000000;
+            box-shadow: 0 4px 0 grey;
             min-height: 45px;
             max-width: 200px;
             @include flex(center,center,column);
@@ -154,6 +204,11 @@ export default {
             display: block;
             text-transform: uppercase;
             @include text(20px, 500, green);
+            cursor: pointer;
+             &:hover,
+             &:active {
+                color: brown;
+                }
         }
     }
 </style>

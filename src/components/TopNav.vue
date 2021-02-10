@@ -6,23 +6,18 @@
               Portfolio
             </router-link>
           </div>
-        <a-button @click="openMenu() " type="" shape="circle"  class="top-nav__burger-btn">
+        <a-button @click="openMenu()" shape="circle"  class="top-nav__burger-btn">
           <a-icon type="menu" class="top-nav__icon-menu" :class="{hiddenIcon}"/>
           <a-icon type="close" class="top-nav__icon-menu" v-if="menuActive" />
         </a-button>
         </div>
         <the-animation>
             <ul class="top-nav__menu" :class="{menuActive}" v-if="menuActive">
-                <li class="top-nav__item-menu" @click="closeMenu()">
-                <router-link to="/works" exact active-class="_active"  class="top-nav__link">
-                    <span>Works</span>
+                <li class="top-nav__item-menu" @click="closeMenu()" v-for="{title, route} in routes" :key="title">
+                <router-link :to="route" exact active-class="_active"  class="top-nav__link">
+                  {{title}}
                 </router-link>
                 </li>
-                <li class="top-nav__item-menu">About</li>
-                <li class="top-nav__item-menu" @click="closeMenu()">
-                  <router-link to="/contact" exact active-class="_active" class="top-nav__link">
-                    <span>Contact</span>
-                </router-link></li>
             </ul>
         </the-animation>
     </nav>
@@ -39,6 +34,21 @@ export default {
             menuActive: false,
             show: true,
             hiddenIcon: false,
+            routes:[
+              {
+                title: "Works",
+                route:"/works"
+              },
+               {
+                title: "About",
+                route:"/about"
+              },
+               {
+                title: "Contact",
+                route:"/contact"
+              }
+            ]
+            
             }
         },
   methods:{
@@ -62,13 +72,13 @@ export default {
     
     &__btns {
       width: 100%;
-      min-height: 70px;
+      min-height: 50px;
       align-items: center;
       @include flex(space-between, center, row);
     }
 
     &__logo {
-       @include text(18px, 500, darkmagenta);
+       @include text(18px, 500, #fff);
        text-transform: uppercase;
        font-style: italic;
       &:hover{
@@ -98,12 +108,8 @@ export default {
       }
     }
     &__icon-menu {
-      color: darkmagenta;
+      color: #fff;
       font-size: 30px;
-      &:hover{
-        color:rgb(185, 56, 185);
-        transition: all 0.3s ease-out;
-      }
     }
 
     .hiddenIcon {
@@ -112,7 +118,7 @@ export default {
 
     .menuActive {
       @include flex(flex-start, center, column);
-       background-color: #0a0f12;
+      background-color: #0a0f12;
       min-height: 100vh;
     }
 
