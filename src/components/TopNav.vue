@@ -1,12 +1,12 @@
 <template>
      <nav class="top-nav">
         <div class="top-nav__btns container">
-          <div class="top-nav__wrap-logo"  @click="closeMenu()">
+          <div class="top-nav__wrap-logo" @click="closeMenu()">
             <router-link class="top-nav__logo" to="/" exact active-class="_active">
               Portfolio
             </router-link>
           </div>
-        <a-button @click="openMenu()" shape="circle"  class="top-nav__burger-btn">
+        <a-button @click="openMenu()" shape="circle" class="top-nav__burger-btn">
           <a-icon type="menu" class="top-nav__icon-menu" :class="{hiddenIcon}"/>
           <a-icon type="close" class="top-nav__icon-menu" v-if="menuActive" />
         </a-button>
@@ -73,7 +73,6 @@ export default {
     &__btns {
       width: 100%;
       min-height: 50px;
-      align-items: center;
       @include flex(space-between, center, row);
     }
 
@@ -86,7 +85,7 @@ export default {
         transition: all 0.3s ease-out;
       }
       &._active {
-        color: darkmagenta;
+        color: #fff;
       }
     }
 
@@ -110,13 +109,14 @@ export default {
     &__icon-menu {
       color: #fff;
       font-size: 30px;
+      cursor: pointer;
     }
 
-    .hiddenIcon {
+    & .hiddenIcon {
       display: none;
     }
 
-    .menuActive {
+    & .menuActive {
       @include flex(flex-start, center, column);
       background-color: #0a0f12;
       min-height: 100vh;
