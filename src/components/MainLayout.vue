@@ -40,7 +40,7 @@ export default {
         min-height: 100vh;
 
          .scrolling {
-            background-color:rgba(#0a0f12, 0.8);
+            background-color:rgba(#0a0f12, 1);
             z-index: 2;
             transition: 0.5s ease-in;
             top: 0;

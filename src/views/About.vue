@@ -41,19 +41,21 @@ export default {
             max-width: 900px;
             width: 100%;
             text-align: inherit;
-            @include text(16px, 600, #000);
+            @include text(16px, 400, #000);
         }
 
         &__header {
-            @include flex(flex-start, flex-end,row);
+            @include flex(flex-start, center,row);
             border-bottom: 1px solid rgb(199, 194, 194);
-            min-height: 50px;
+            min-height: 70px;
             margin-bottom: 20px;
         }
 
 
         &__header-title {
              @include text(18px, 600, #000);
+             padding: 0;
+             margin: 0;
         }
 
         &__header-icon {
@@ -61,7 +63,7 @@ export default {
         }
 
         &__link {
-             color: darkmagenta;
+            @include text(16px, 500, rgb(139, 0, 97));
              &:hover,
              &:active {
                  color: rgb(226, 77, 226);

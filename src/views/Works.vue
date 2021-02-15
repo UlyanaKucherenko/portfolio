@@ -1,7 +1,9 @@
 <template>
     <div class="works">
         <div class="works__container container">
+           <the-animation name="show-works">
             <ul class="works__list">
+                
                 <li class="works__item-list" >
                     <a class="works__item-link" href="https://github.com/UlyanaKucherenko" target="_blank">
                         <h2 class="works__title-first">GitHub </h2>
@@ -10,6 +12,7 @@
                         </div>
                     </a>
                 </li>
+                
                 <li class="works__item-list" v-for="item in projects" :key="item.title">
                     <div class="works__image-wrap">
                         <img src="https://picsum.photos/seed/picsum/250/300" />
@@ -21,11 +24,10 @@
                             <a href="#" target="_blank" class="works__github">GitHub</a>
                         </div>
                         <p class="works__read-more" @click="showModal(item)" >read more...</p>
-                    </div>
-                    <div>
-                    </div>
+                    </div> 
                 </li>
             </ul>
+           </the-animation>
             <the-modal :currentItem="currentItem" :handleCancel="handleCancel" :visible="visible"></the-modal>
         </div>
     </div>
@@ -101,7 +103,7 @@ export default {
         &__list{
             width: 100%;
             @include flex(center,center,column);
-             @media screen and (min-width: 768px) {
+             @media screen and (min-width: 600px) {
                 @include flex(space-between,center,row,wrap);
             }
         }
@@ -127,13 +129,12 @@ export default {
                 }
             }
               
+            @media screen and (min-width: 600px) {
+                width: 50%;
+            }  
             @media screen and (min-width: 768px) {
-                width: 48%;
-            }
-            @media screen and (min-width: 960px) {
                 width: 30%;
             }
-
            
         }
 
@@ -227,5 +228,6 @@ export default {
                 color: brown;
                 }
         }
+
     }
 </style>

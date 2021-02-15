@@ -11,8 +11,8 @@
           <a-icon type="close" class="top-nav__icon-menu" v-if="menuActive" />
         </a-button>
         </div>
-        <the-animation>
-            <ul class="top-nav__menu" :class="{menuActive}" v-if="menuActive">
+        <the-animation >
+            <ul class="top-nav__menu" :class="{menuActive:true}" v-if="menuActive">
                 <li class="top-nav__item-menu" @click="closeMenu()" v-for="{title, route} in routes" :key="title">
                 <router-link :to="route" exact active-class="_active"  class="top-nav__link">
                   {{title}}
