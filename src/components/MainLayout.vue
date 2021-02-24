@@ -60,7 +60,8 @@ export default {
             flex:1;
             height: 100vh;
             width: 100%;
-            
+            background: rgba(0,0,0,0.2);
+            color:rgba(209, 255, 255,1);
         }
     }
 </style>

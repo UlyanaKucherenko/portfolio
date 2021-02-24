@@ -15,13 +15,13 @@
                 
                 <li class="works__item-list" v-for="item in projects" :key="item.title">
                     <div class="works__image-wrap">
-                        <img src="https://picsum.photos/seed/picsum/250/300" />
+                        <img :src="require(`@/assets/img/${item.picture}`)" :alt="item.title" />
                     </div>
                     <div class="works__info">
                         <p class="works__title">{{item.title}}</p>
                         <div class="works__btns-link">
-                            <a href="#" target="_blank" class="works__preview">preview</a>
-                            <a href="#" target="_blank" class="works__github">GitHub</a>
+                            <a :href="item.preview" target="_blank" class="works__preview">preview</a>
+                            <a :href="item.github" target="_blank" class="works__github">GitHub</a>
                         </div>
                         <p class="works__read-more" @click="showModal(item)" >read more...</p>
                     </div> 
@@ -44,30 +44,30 @@ export default {
             currentItem:{},
             projects: [
                 {
-                    image: "",
                     title: "CoffeeLike App | Vue Js ",
+                    picture: "coffeeLike.png",
                     descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
-                    github: "",
-                    preview:"",
+                    github: "https://github.com/UlyanaKucherenko/CoffeeLike",
+                    preview:"https://coffeelike.netlify.app",
                 },
                  {
-                    image: "",
-                    title: "Manag | Vue Js",
+                    title: "Merge Development | Vue Js",
+                    picture: "merge-development.png",
                     descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
-                    github: "",
-                    preview:"",
+                    github: "https://github.com/UlyanaKucherenko/Merge-Development",
+                    preview:"https://merge-development.netlify.app",
                 },
                  {
-                    image: "",
                     title: "Portfolio | Vue Js",
+                    picture: "coffeeLike.png",
                     descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
                     github: "",
                     preview:"",
 
                 },
                  {
-                    image: "",
                     title: "Sushee | Vue Js",
+                    picture: "coffeeLike.png",
                     descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
                     github: "",
                     preview:"",
@@ -86,7 +86,6 @@ export default {
             this.currentItem = item;
             },
         handleCancel() {
-            console.log('Clicked cancel button');
             this.visible = false;
         },
     }
@@ -96,6 +95,7 @@ export default {
     .works {
         padding-top: 70px;
         width: 100%;
+        background-color: white;
         
         &__container {
             @include flex(center,center,column);
@@ -112,6 +112,7 @@ export default {
             @include flex(center,center,column);
             text-align: center;
             border:1px solid rgb(201, 199, 199);
+            background-color: white;
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             width: 90%;
             max-width: 250px;
@@ -172,6 +173,7 @@ export default {
         &__title {
             @include text(20px, 500, #000);
             min-height: 60px;
+            margin-bottom: 10px;
         }
 
         &__btns-link {

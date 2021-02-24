@@ -26,6 +26,7 @@ export default {
         [getName('github')]: () => import('../icons/IconGithub.vue'),
         [getName('gmail')]: () => import('../icons/IconGmail.vue'),
         [getName('tel')]: () => import('../icons/IconTel.vue'),
+        [getName('telegram')]: () => import('../icons/IconTelegram.vue'),
 
     },
     computed: {

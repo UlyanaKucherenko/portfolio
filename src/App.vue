@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <main-layout>
-      <transition name="inner-fade" mode="out-in">
+      <transition name="fade-in" mode="out-in">
           <router-view />
       </transition>
     </main-layout>
@@ -20,13 +20,24 @@ export default {
 
 <style lang="scss">
 
-.inner-fade-enter-active,
- .inner-fade-leave-active {
-  transition: opacity .2s
-}
-.inner-fade-enter, 
-.inner-fade-leave-to {
-  opacity: 0
+#app {
+
+  .fade-in-enter-active {
+    animation: fadeIn 1s;
+  }
+
+  .fade-in-enter-leave {
+    animation: fadeIn 1s;
+  }
+
+  @keyframes fadeIn {
+      0% {
+        opacity: 0; 
+        }
+      100% {
+        opacity: 1; 
+        }
+  }
 }
 
 </style>

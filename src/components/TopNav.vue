@@ -10,6 +10,13 @@
           <a-icon type="menu" class="top-nav__icon-menu" :class="{hiddenIcon}"/>
           <a-icon type="close" class="top-nav__icon-menu" v-if="menuActive" />
         </a-button>
+         <ul class="top-nav__menu-big-screen">
+                <li class="top-nav__menu-big-screen__item" @click="closeMenu()" v-for="{title, route} in routes" :key="title">
+                <router-link :to="route" exact active-class="_active"  class="top-nav__link top-nav__menu-big-screen__link">
+                  {{title}}
+                </router-link>
+                </li>
+            </ul>
         </div>
         <the-animation >
             <ul class="top-nav__menu" :class="{menuActive:true}" v-if="menuActive">
@@ -97,6 +104,7 @@ export default {
        display: none;
     }
 
+
     &__burger-btn {
       background: transparent;
       border: none;
@@ -104,6 +112,10 @@ export default {
       &:hover,
       &:focus {
         background: transparent;
+      }
+      
+      @media screen and (min-width: 1000px) {
+       display: none;
       }
     }
     &__icon-menu {
@@ -140,6 +152,34 @@ export default {
       &._active {
         color: darkmagenta;
       }
+    }
+
+    &__menu-big-screen {
+      display: none;
+      min-height: 50px;
+      text-transform: uppercase;
+      &__item {
+        margin-right: 30px;
+          &:last-child{
+              margin-right: 0;
+          }
+      }
+
+      &__link {
+        @include text(18px, 500, #fff);
+        &:hover,
+          &:active {
+            color: darkmagenta;
+            transition: all 0.3s ease-out;
+          }
+          &._active {
+            color: darkmagenta;
+          }
+        }
+
+        @media screen and (min-width: 1000px) {
+          @include flex(flex-start, center, row);
+        }
     }
 }
 </style>

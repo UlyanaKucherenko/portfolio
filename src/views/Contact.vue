@@ -40,6 +40,7 @@ export default {
     .contact {
         padding-top: 70px;
         width: 100%;
+        background-color: white;
         
         &__container {
             @include flex(center,center,column);

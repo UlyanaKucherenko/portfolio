@@ -7,12 +7,7 @@
             :footer="null"
             >
             <div class="the-modal__main">
-                <div class="the-modal__col the-modal__col_left ">
-                    <div class="the-modal__wrap-image">
-                          <img src="https://picsum.photos/seed/picsum/250/300" />
-                    </div>
-                </div>
-                <div class="the-modal__col the-modal__col_right">
+                <div class="the-modal__col">
                     <h3 class="the-modal__subtitle">Technologies that I used:</h3>
                     <p class="the-modal__text">{{ currentItem.descreption }}</p>
                 </div>
@@ -34,18 +29,8 @@ export default {
         }
 
         &__col {
-            width: 50%;
-            &_left {
-
-            }
-            &_right{
-                padding-left:20px ;
-            }
-        }
-
-        &__wrap-image {
             width: 100%;
-            @include padding-hack($padding: 100%, $size: cover);
         }
+
     }
 </style>

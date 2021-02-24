@@ -57,7 +57,7 @@ export default {
 </script>
 <style lang="scss">
   .home {
-    background-color: #0a0f12;
+  
     width: 100%;
     height: 100%;
     color: #fff;
@@ -65,19 +65,6 @@ export default {
     position: relative;
     z-index: 1;
 
-    
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: block;
-      background: url("../assets/Stars.svg") no-repeat center;
-      background-size: cover;
-      z-index: 0;
-    }
 
     &__container {
       position: relative;
