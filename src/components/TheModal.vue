@@ -8,8 +8,9 @@
             >
             <div class="the-modal__main">
                 <div class="the-modal__col">
-                    <h3 class="the-modal__subtitle">Technologies that I used:</h3>
                     <p class="the-modal__text">{{ currentItem.descreption }}</p>
+                    <h3 class="the-modal__subtitle">Technologies that I used:</h3>
+                      <p class="the-modal__text">{{ currentItem.tech }}</p>
                 </div>
             </div>
         </a-modal>

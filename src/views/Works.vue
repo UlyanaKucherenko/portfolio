@@ -26,6 +26,9 @@
                         <p class="works__read-more" @click="showModal(item)" >read more...</p>
                     </div> 
                 </li>
+                <li class="works__item-list works__item-carousel">
+                    <the-carousel />
+                </li>
             </ul>
            </the-animation>
             <the-modal :currentItem="currentItem" :handleCancel="handleCancel" :visible="visible"></the-modal>
@@ -34,10 +37,12 @@
 </template>
 <script>
 import TheModal from "../components/TheModal.vue"
+import TheCarousel from "../components/TheCarousel.vue"
 export default {
     name: "Works",
     components:{
-        TheModal
+        TheModal,
+        TheCarousel
     },
     data(){
         return{
@@ -46,38 +51,32 @@ export default {
                 {
                     title: "CoffeeLike App | Vue Js ",
                     picture: "coffeeLike.png",
-                    descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
+                    descreption: "Final study project. Web App for ordering a cup of coffee.  ",
+                    tech:"Vue Js, Vuex, FireBase, SCSS, styled components, responsive design.",
                     github: "https://github.com/UlyanaKucherenko/CoffeeLike",
                     preview:"https://coffeelike.netlify.app",
                 },
                  {
                     title: "Merge Development | Vue Js",
                     picture: "merge-development.png",
-                    descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
+                    descreption: "Test task for IT-company, singIn form & carousel.",
+                    tech:"Vue Js, ui-library AntDisigne,responsive design",
                     github: "https://github.com/UlyanaKucherenko/Merge-Development",
                     preview:"https://merge-development.netlify.app",
                 },
                  {
                     title: "Portfolio | Vue Js",
-                    picture: "coffeeLike.png",
-                    descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
-                    github: "",
-                    preview:"",
+                    picture: "portfolio.png",
+                    descreption: "Project with my othes projects. ",
+                    tech:"Vue Js, styled components with Scss, mobile-first",
+                    github: "https://github.com/UlyanaKucherenko/portfolio",
+                    preview:"https://uliana-kucherenko.netlify.app",
 
                 },
-                 {
-                    title: "Sushee | Vue Js",
-                    picture: "coffeeLike.png",
-                    descreption: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati unde inventore iusto praesentium cum consectetur doloribus minima, tenetur quod deserunt nemo modi iure, esse dignissimos suscipit nostrum optio rerum quae.",
-                    github: "",
-                    preview:"",
-
-                }
             ],
 
             ModalText: 'Content of the modal',
             visible: false,
-            confirmLoading: false,
         }
     },
     methods: {
@@ -116,7 +115,7 @@ export default {
             box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
             width: 90%;
             max-width: 250px;
-            min-height: 320px;
+            min-height: 360px;
             padding: 10px 15px;
             &:first-child{
                 border-radius:30px 0px 30px 0px ;

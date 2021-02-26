@@ -3,7 +3,7 @@ import './styles/style.scss';
 
 import Vue from 'vue'
 import App from './App.vue'
-import {Modal,Icon,Button,Avatar} from 'ant-design-vue';
+import {Modal,Icon,Button,Avatar,Carousel} from 'ant-design-vue';
 import router from './router'
 
 import TheAnimation from './components/common/TheAnimation.vue';
@@ -14,6 +14,7 @@ Vue.use(Modal);
 Vue.use(Icon);
 Vue.use(Button);
 Vue.use(Avatar);
+Vue.use(Carousel);
 Vue.component("TheAnimation", TheAnimation);
 Vue.component("XIcon", XIcon);
 
