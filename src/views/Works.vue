@@ -67,8 +67,8 @@ export default {
                  {
                     title: "Portfolio | Vue Js",
                     picture: "portfolio.png",
-                    descreption: "Project with my othes projects. ",
-                    tech:"Vue Js, styled components with Scss, mobile-first",
+                    descreption: "Project with my other projects. ",
+                    tech:"Vue Js, Vue Router, styled components with Scss, mobile-first",
                     github: "https://github.com/UlyanaKucherenko/portfolio",
                     preview:"https://uliana-kucherenko.netlify.app",
 
