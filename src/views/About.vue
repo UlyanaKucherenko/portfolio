@@ -8,7 +8,8 @@
                     </a>
                     <p class="about__header-title">Hello, I'm Uliana! Creative front-end developer</p>
                 </div>
-                <p class="about__text">I am actively looking for a junior developer position. Willing to join a dynamic, innovative, and collaborative team.
+                <p class="about__text">I like to improve my technical skills and get new knowledge in the direction of Frontend development.
+                 Now I am open to new proposals.
                 <b class="about__offers">Offers related to the internship are highly welcome!</b></p>
 
                 <ul class="about__soft-skills">
@@ -27,6 +28,10 @@
                     where I got experience with semantic HTML, CSS, SCSS, Java Script|ES6 when doing <a href="https://github.com/UlyanaKucherenko/Study-Projects" class="about__link">practical tasks</a>.
                     My <a href="https://github.com/UlyanaKucherenko/CoffeeLike" class="about__link">finel project</a> was the CoffeeLike 
                     web application built with Vue Js, VueX and FireBase.  </p>
+
+                <ul class="about__soft-skills">
+                 <li class="about__soft-skills-item">In 2021 March I got my first front-end developer job. Spent there 9 months working with Vue Js.</li>
+                </ul>
              </div>
         </div>
     </div>
